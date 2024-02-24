@@ -1,19 +1,18 @@
-import React from "react";
-import { useRouter } from "next/router";
-
-import { BsFillPlayFill } from "react-icons/bs";
+import React from 'react';
+import { PlayIcon } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 
 interface PlayButtonProps {
-	movieId: string;
+  movieId: string;
 }
 
 const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
-	const router = useRouter();
+  const router = useRouter();
 
-	return (
-		<button
-			onClick={() => router.push(`/watch/${movieId}`)}
-			className="
+  return (
+    <button 
+      onClick={() => router.push(`/watch/${movieId}`)}
+      className="
         bg-white 
         rounded-md 
         py-1 md:py-2 
@@ -26,12 +25,12 @@ const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
         items-center
         hover:bg-neutral-300
         transition
-      "
-		>
-			<BsFillPlayFill className="w-4 md:w-7 text-black mr-1" size={25} />
-			Play
-		</button>
-	);
-};
+        "
+      >
+        <PlayIcon className="w-4 md:w-7 text-black mr-1" />
+        Play
+    </button>
+  );
+}
 
 export default PlayButton;
